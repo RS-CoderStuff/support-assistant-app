@@ -1,0 +1,9 @@
+.env
+.git
+.pytest_cache
+.venv
+__pycache__
+*.egg-info
+*.pyc
+.DS_Store
+tests

@@ -1,0 +1,12 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "208731216071.dkr.ecr.us-east-1.amazonaws.com/support-assistant-ollama:qwen2.5-3b",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "11434"
+    }
+  ]
+}
