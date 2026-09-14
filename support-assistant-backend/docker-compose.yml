@@ -1,0 +1,23 @@
+services:
+  api:
+    build: .
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    ports: ["80:8000"]
+    environment:
+      - AWS_REGION=${AWS_REGION}
+      - RAW_BUCKET=${RAW_BUCKET}
+      - ENRICHED_BUCKET=${ENRICHED_BUCKET}
+      - INGESTION_QUEUE_URL=${INGESTION_QUEUE_URL}
+      - DYNAMODB_TABLE=${DYNAMODB_TABLE}
+      - SANITIZER_MODE=${SANITIZER_MODE}
+
+  worker:
+    build: .
+    command: python -m app.workers.ingestion_worker
+    environment:
+      - AWS_REGION=${AWS_REGION}
+      - RAW_BUCKET=${RAW_BUCKET}
+      - ENRICHED_BUCKET=${ENRICHED_BUCKET}
+      - INGESTION_QUEUE_URL=${INGESTION_QUEUE_URL}
+      - DYNAMODB_TABLE=${DYNAMODB_TABLE}
+      - SANITIZER_MODE=${SANITIZER_MODE}

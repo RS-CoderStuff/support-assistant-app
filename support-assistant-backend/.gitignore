@@ -1,0 +1,10 @@
+.env
+.env.example
+.venv/
+.venv-1/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+support-knowledge-ingestion.zip
+.DS_Store

@@ -1,0 +1,23 @@
+{
+  "ticket_id": "INC-10001",
+  "title": "Payment API failure",
+  "description": "Payment API returns HTTP 503 after deployment.",
+  "problem": "Payment requests fail with Service Unavailable responses after a deployment.",
+  "symptoms": ["HTTP 503", "Service unavailable", "Failed payment authorization"],
+  "product": "payments",
+  "component": "payment-api",
+  "environment": "production",
+  "severity": "high",
+  "type": "deployment",
+  "subtype": "startup_failure",
+  "team": "payments-platform",
+  "status": "resolved",
+  "root_cause": "Configuration mismatch",
+  "resolution": "Update deployment configuration and restart the service.",
+  "verification": "Health endpoint returns HTTP 200 and a test payment succeeds.",
+  "resolution_verified": true,
+  "resolution_quality": 0.96,
+  "document_version": "1.0",
+  "effective_date": "2026-09-07",
+  "access_level": "internal"
+}
